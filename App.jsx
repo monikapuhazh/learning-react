@@ -3,9 +3,18 @@ import React from 'react';
 class App extends React.Component {
     render() {
         var greetingTargetClass = 'greetingTargetContainer';
-        var greetingTarget = 'Gus';
+        var greetingTargets = ['Anna', 'Tyler', 'Joe'];
+        var namesList = greetingTargets.map(function(name, index) {
+            return (
+                <li key={index}>{name}</li>
+            );
+        });
         return (
-            <div className={greetingTargetClass}>Hello {greetingTarget}!</div>
+            <div className={greetingTargetClass}>Hello!
+                <ul>
+                    {namesList}
+                </ul>
+            </div>
         );
     }
 }
